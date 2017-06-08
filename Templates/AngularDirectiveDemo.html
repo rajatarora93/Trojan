@@ -1,0 +1,41 @@
+﻿<div ng-include="'Templates/Header.html'"></div>
+<div class="css-center" style="margin:0px;padding-bottom:13px" ng-controller="directiveController" ng-style="{color:colour}">
+    <div style="margin-bottom:1em">
+        <label for="Colour"><strong>Please enter your favourite color:</strong></label>
+        <input type="text" name="color" ng-model="colour" placeholder="Enter a color name" />
+    </div>
+    <div style="margin-bottom:1em">
+        <label for="Search"><strong>Filter By:</strong></label>
+        <input type="text" name="name" ng-model="filterby" placeholder="Enter name tob search" />
+    </div>
+    <div style="margin-bottom:2em">
+        <strong>
+            People Details:
+        </strong>
+        <table style="border-color:white;" border="1" align="center">
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Status</th>
+            </tr>
+            <tr ng-repeat="x in people|filter:{Name:filterby}" ng-class="{'pending-delete':x.checked}">
+                <td>{{x.Name}}</td>
+                <td>{{x.Title|uppercase}}</td>
+                <td><input type="checkbox" ng-model="x.checked" /><span ng-if="x.checked">(will be deleted)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <input type="radio" name="menu" ng-model="r.show" value="Show" /><strong>Show Menu</strong>
+        <input type="radio" name="menu" ng-model="r.show" value="Hide" /><strong>Hide Menu</strong>
+   </div>
+    <div class="css-section css-form" style="margin-left:35em;margin-right:35em;box-shadow:-5px -5px rgb(189,189,189);" ng-show="r.show=='Show'" ng-hide="r.show=='Hide'">
+        <label for="lunch"><strong>Select lunch menu for people</strong></label>
+        <select ng-model="dishSelected">
+            <option ng-repeat="x in dishes">{{x}}</option>
+        </select>
+        <h3>{{"Yours selection is "+dishSelected}}</h3>
+        <span><i>{{"Lets have "+dishSelected+":"}}</i></span>
+    </div>
+</div>
+<div ng-include="'Templates/Footer.html'"></div>

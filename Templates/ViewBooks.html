@@ -1,0 +1,47 @@
+﻿<div class="view" ng-controller="bookListCtrl">
+    <header style="background-color:antiquewhite;color:black;margin-bottom:25px;margin-top:0px;">Library Management System</header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 css-center" style="font-size:x-large;color:black">View Books</div>
+            <div class="col-lg-12" style="color:black">
+                <table align="center">
+                    <tr>
+                        <td><label for="Search">Search Books:</label></td>
+                        <td><input type="text" ng-model="filterby" name="bookname" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Sort">Sort Books:</label></td>
+                        <td>
+                            <select ng-model="sortby">
+                                <option value="bookId">Book Id</option>
+                                <option value="bookTitle">Book Title</option>
+                                <option value="cost">Cost</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1" style="background-color:antiquewhite;color:black;padding-top:7px;padding-bottom:7px;"><strong>SI.No</strong></div>
+                <div class="col-lg-3" style="background-color:antiquewhite;color:black;padding-top:7px;padding-bottom:7px;"><strong>Image</strong></div>
+                <div class="col-lg-5" style="background-color:antiquewhite;color:black;padding-top:7px;padding-bottom:7px;"><strong>Details</strong></div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row" ng-repeat="x in book">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1" ng-style="style" ng-class="{'even-row':$odd}">{{$index+1}}</div>
+                <div class="col-lg-3" style="color:black;padding-top:5px;padding-bottom:5px;" ng-style="style" ng-class="{'even-row':$odd}"><img src="{{x.imgUrl}}" style="height:100%;" /></div>
+                <div master class="col-lg-5" style="color:black;" ng-class="{'even-row':$odd}">
+                    <table highlight>
+                        <tr ng-repeat="(y,z) in x" ng-if="y!='imgUrl' && y!='issued'">
+                            <td>{{y}}</td>
+                            <td>{{z|BookCurrency:y:'Rs'}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </div>
+</div>

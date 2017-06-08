@@ -1,0 +1,101 @@
+﻿<div class="view" ng-controller="signupController">
+    <div class="bs-example">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Sign Up to start placing orders!</div>
+            </div>
+            <div style="padding-top:40px" class="panel-body">
+                <form id="signupform" role="form" name="signupform" novalidate>
+                    <div class="row" style="margin-bottom:40px" ng-class="{'has-error':signupform.name.$pristine,'has-error':signupform.name.$invalid,'has-success':signupform.name.$valid}">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Name:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input type="text" name="name" ng-model="user.name" class="form-control" id="signup-name" required/>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div ng-show="signupform.name.$dirty && signupform.name.$invalid" ng-style="{color:'red'}">
+                            <span ng-show="signupform.name.$error.required">Please enter name</span>
+                        </div>
+                    </div>
+                        </div>
+                    <div class="row" style="margin-bottom:40px" ng-class="{'has-error':signupform.gender.$pristine,'has-error':signupform.gender.$invalid,'has-success':signupform.gender.$valid}">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Gender:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group radio-control" style="border:1px solid #ccc; border-radius:3px">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                Female:<input type="radio" name="gender" ng-model="user.gender" value="Female" required/>
+                                Male:<input type="radio"  name="gender" ng-model="user.gender" value="Male" />
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div ng-show="signupform.gender.$dirty && signupform.gender.$invalid" ng-style="{color:'red'}">
+                                <span ng-show="signupform.gender.$error.required">Please select gender</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:40px" ng-class="{'has-error':signupform.mobile.$pristine,'has-error':signupform.mobile.$invalid,'has-success':signupform.mobile.$valid}">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Mobile:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input type="number" name="mobile" ng-model="user.mobile" placeholder="+91-xxx-xxxxx" class="form-control" id="signup-mobile" ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" required />
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div ng-show="signupform.mobile.$dirty && signupform.mobile.$invalid" ng-style="{color:'red'}">
+                            <span ng-show="signupform.mobile.$error.required">Please enter mobile number</span>
+                            <span ng-show="signupform.mobile.$error.pattern">Please enter the no matching pattern [91-xxx-xxxxx || +91-xxx-xxxxx]</span>
+                        </div>
+                            </div>
+                    </div>
+                    <div class="row" style="margin-bottom:40px">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Password:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" name="password" ng-model="user.password" class="form-control" id="signup-password" />
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="row" style="margin-bottom:40px">
+                        <div class="col-lg-2">
+                            <label class="pull-right" style="display:inline-block;">Confirm<br>Password:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" name="confirmpassword" ng-model="user.Confirmpassword" class="form-control" id="signup-confirmpassword" />
+                            </div>
+                        </div>
+                    </div>         
+                    <div class="row">
+                        <div class="col-lg-2 col-lg-offset-2">
+                            <div class="form-group">
+                                <div class="col-lg-12 controls">
+                                    <button type="submit" style="width:100%" class="btn btn-primary input" ng-click="signup()">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-lg-offset-2">
+                            <div class="form-group">
+                                <div class="col-lg-12 controls">
+                                    <a href="Login" class="btn btn-primary" style="width:100%">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

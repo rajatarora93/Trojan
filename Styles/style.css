@@ -1,0 +1,108 @@
+﻿html
+{
+font-family:'Aharoni';
+font-size:large;
+}
+
+body,nav{
+    background:rgba(237,237,237,1);
+    background:-moz-linear-gradient(top,rgba(237,237,237,1) 0%,rgba(246,246,246,1) 62%,rgba(255,255,255,1) 100%);
+    background:-webkit-gradient(left top,left bottom,color-stop(0%,rgba(237,237,237,1)),color-stop(62%,rgba(246,246,246,1)),color-stop(100%,rgba(255,255,255,1)));
+    background:-webkit-linear-gradient(top,rgba(237,237,237,1) 0%,rgba(246,246,246,1) 62%,rgba(255,255,255,1) 100%);
+    background:-o-linear-gradient(top,rgba(237,237,237,1) 0%,rgba(246,246,246,1) 62%,rgba(255,255,255,1) 100%);
+    background:-moz-linear-gradient(top,rgba(237,237,237,1) 0%,rgba(246,246,246,1) 62%,rgba(255,255,255,1) 100%);
+    background:linear-gradient(bottom,rgba(237,237,237,1) 0%,rgba(246,246,246,1) 62%,rgba(255,255,255,1) 100%);
+}
+
+#main
+{
+    background-image:url('../Images/Background Table_1.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    color:cyan;
+    height:500px;
+    opacity:0.9;
+    width:100%;
+}
+
+#myCarousal
+{
+    background-size:cover;
+    text-align:center;
+    width:100%;
+}
+
+.parent
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    overflow:auto;
+    resize:vertical;
+}
+
+.child{
+    overflow:auto;
+    resize:vertical;
+    transform:translateY(-50%);
+}
+
+.border-right{
+    border-right:1px solid #D1C7C6;
+}
+
+.border-left
+{
+    border-left:1px solid #D1C7C6;
+}
+
+.border-bottom{
+    border-bottom:0.9px solid #D1C7C6;
+}
+
+.btn,.input,.panel-title{
+    font-size:14pt;
+}
+.input{
+    width:100%;
+}
+.roundcorners{
+    border-radius:3px;
+}
+
+.css-form input.ng-invalid.ng-dirty{
+    background-color:#D98880;
+}
+
+.bs-example{
+    height:510px;
+    margin:0 auto;
+    padding-top:40px;
+    width:70%;
+}
+
+.zoom:hover{
+    transform:scale(1.25,1.25);
+}
+
+.error{
+    color:red;
+}
+
+.view{
+    background:white;
+    height:510px;
+    overflow:auto;
+    width:100%;
+}
+
+.border-bottom{
+    border-bottom:2px solid #ddd;
+}
+
+a.link-colour{
+    color:chartreuse;
+}
+a.link-colour:hover{
+    color:white;
+}

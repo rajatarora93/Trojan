@@ -1,0 +1,65 @@
+﻿<div class="view" ng-controller="filterController">
+    <section>
+        <header style="text-align:left;color:red">
+            <header-Line title="heading"></header-Line>
+        </header>
+    </section>
+    <h2 class="center-block">{{"Report on :"+title}}</h2>
+
+    <section class="center" style="width:50%">
+        <label>Sort By:</label>
+        <select ng-model="sortBy">
+            <option value="levelOfTraining">LevelOfTraining-increasing order</option>
+            <option value="costOfTraining">CostOfTraining-increasing order</option>
+            <option value="-levelOfTraining">LevelOfTraining-decreasing order</option>
+            <option value="-costOfTraining">costOfTraining-deccreasing order</option>
+        </select><br /><br />
+        <label>Filter By:</label>
+        <input type="text" ng-model="filterBy" />
+    </section><br /><br />
+    <table border="1" style="border-style:solid;border-color:black">
+        <tr>
+            <th>
+                <label class="css-tableheader">SI No.</label>
+            </th>
+            <th>
+                <label class="css-tableheader">Username</label>
+            </th>
+            <th>
+                <label class="css-tableheader">Course Selected</label>
+            </th>
+            <th>
+                <label class="css-tableheader">Level Of Training</label>
+            </th>
+            <th>
+                <label class="css-tableheader">Date Of Registration</label>
+            </th>
+            <th>
+                <label class="css-tableheader">Cost of Training</label>
+            </th>
+        </tr>
+        <tr ng-repeat="request in requests|orderBy:sortBy|filter:filterBy">
+            <td class="td-align">
+                <label>{{$index + 1|MyNumber}}</label>
+            </td>
+            <td class="td-align">
+                <label>{{request.username}}</label>
+            </td>
+            <td class="td-align">
+                <label>{{request.courseSelected| uppercase | limitTo :"3"}}</label>
+            </td>
+            <td class="td-align">
+                <label>{{request.levelOfTraining| lowercase |MyFirstLetter:3}}</label>
+            </td>
+            <td class="td-align">
+                <label>
+                    {{request.dateOfRegistration|date:'shortDate'}}
+                </label>
+            </td>
+            <td class="td-align">
+                <label>{{request.costOfTraining|MyCurrency:" Rs.":true}}</label>
+            </td>
+        </tr>
+    </table>
+    <section class="center">Total number of requests:{{requests.length|number:2}}</section>
+</div>

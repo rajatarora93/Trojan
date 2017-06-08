@@ -1,0 +1,116 @@
+﻿<div class="view" ng-controller="registerController">
+    <div class="bs-example">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">{{heading+" "}}<span><header-Line title="'(Example of Custom Directives)'"></header-Line></span></div>
+            </div>
+            <div style="padding-top:40px" class="panel-body">
+                <form id="courseform" role="form" name="courseform">
+                    <div class="row" style="margin-bottom:40px">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Name:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input type="text" name="name" ng-model="user.name" class="form-control" id="name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:40px">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Gender:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group" style="border:1px solid #ccc; border-radius:3px">
+                               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                Female:<input type="radio" name="gender" ng-model="user.gender" value="Female"/>
+                                Male:<input type="radio" name="gender" ng-model="user.gender" value="Male" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:40px">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Mobile:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input type="number" name="mobile" ng-model="user.mobile" class="form-control" id="mobile" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:40px">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Training Mode:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-blackboard"></i></span>
+                                <select ng-model="user.trainingMode" class="form-control" ng-change="getCourses()">
+                                    <option value="VCR">Virtual Classroom</option>
+                                    <option value="CR">Online Classroom</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:40px">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Courses Offered:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+                                <select ng-model="user.courseSelected" class="form-control">
+                                    <option ng-repeat="x in Courses">{{x.coursename}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:40px">
+                        <div class="col-lg-2">
+                            <label class="pull-right">Level Of Training:</label>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-level-up"></i></span>
+                                <select ng-model="user.levelSelected" class="form-control" ng-options="x for (x,y) in levels">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <span ng-switch on="user.levelSelected">
+                                <span ng-switch-when="Basic">Level selected:Basic</span>
+                                <span ng-switch-when="Intermediate">Level selected:Intermediate</span>
+                                <span ng-switch-when="Advanced">Level selected:Advanced</span>
+                                <span ng-switch-default="">Level selected:Overview session</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-lg-offset-2">
+                            <div class="form-group">
+                                <div class="col-lg-12 controls">
+                                    <button type="submit" style="width:100%" class="btn btn-primary input" ng-click="save()">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-lg-offset-2">
+                            <div class="form-group">
+                                <div class="col-lg-12 controls">
+                                    <a href="Login.html" class="btn btn-primary" style="width:100%">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <fieldset ng-show="message.length>0">
+                    <legend style="padding-left:40px">Details</legend>
+                    <ul class="my-Class">
+                        {{message}}
+                    </ul>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
