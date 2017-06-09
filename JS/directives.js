@@ -43,3 +43,23 @@ directives.directive('highlight', function () {
         }
     };
 });
+
+directives.directive('pwCheck', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+            elem.bind("keyup", function (evt) {
+                var firstPassword = '#' + attrs.pwCheck;
+                scope.$apply(function () {
+                    var val = elem.val();
+                    if (val == $(firstPassword).val()) {
+                        ctrl.$setValidity('pwmatch', true);
+                    }
+                    else {
+                        ctrl.$setValidity('pwmatch', false);
+                    }
+                });
+            });
+        }
+    };
+});
