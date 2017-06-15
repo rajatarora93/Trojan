@@ -1,14 +1,32 @@
-﻿app.controller('loginController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+﻿app.controller('appController', ['$scope','$rootScope','$location', function ($scope,$rootScope,$location) {
+    $scope.logout = function () {
+        bootbox.confirm("Are you sure you want to logout", function (result) {
+            if (result) {
+                $rootScope.username = '';
+                bootbox.alert("You have been successfully logout!!");
+                $scope.$apply(function () {
+                    $location.path("/ApplicationHome");
+                })
+                console.log("logoutController"+$location.path());
+            }
+        });
+    }
+}
+]);
+
+app.controller('loginController', ['$scope', '$rootScope','$location', function ($scope, $rootScope, $location) {
     $scope.validate = function (form) {
         if ($scope.user.username != $scope.user.password) {
             $scope.message = "Oops! Credentials given were wrong! Please Re-try with valid credentials..!";
-            angular.element("#loginform")[0].reset();
+            angular.element("#login")[0].reset();
         }
         else {
             $rootScope.username = $scope.user.username;
-            bootbox.alert("Successful Login");
-            angular.element("#loginform")[0].reset();
+            angular.element("#login")[0].reset();
             $scope.message = '';
+            bootbox.alert("Successful Login");
+            $location.path("/FoodMenu");
+           
         }
     }
 }
