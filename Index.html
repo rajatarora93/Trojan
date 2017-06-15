@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
     <title></title>
@@ -41,6 +41,7 @@
     <script src="Lib/bootstrap.js"></script>
     <script src="Lib/angular.js"></script>
     <script src="Lib/angular-route.js"></script>
+    <script src="Lib/bootbox.min.js"></script>
     <script src="JS/directives.js"></script>
     <script src="JS/filters.js"></script>
     <script src="JS/app.js"></script>
@@ -49,64 +50,14 @@
     <script src="Controllers/filterController.js"></script>
     <script src="Controllers/directiveController.js"></script>
     <script src="Controllers/appController.js"></script>
+    <script src="Controllers/appHomeController.js"></script>
     <base href="/" />
 </head>
 <body>
-    <nav class="navbar navbar-inverse" style="background:-webkit-linear-gradient(right,black,black);">
-        <div class="container-fluid">
-            <div class="col-xs-1 col-sm-1 col-lg-1">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="Index">Snackbox</a>
-                </div>
-            </div> 
-            <div class="col-xs-7 col-sm-7 col-lg-7">
-                <ul class="nav navbar-nav">
-                    <li><a href="Index">Home</a></li>
-                    <li><a href="Courses">Courses</a></li>
-                    <li><a href="Directives">Directives</a></li>
-                    <li><a href="Books">Book Store</a></li>
-                    <li><a href="Filters">Filters</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-lg-4">
-            <ul class="nav navbar-nav pull-right">
-                <li><a style="padding-top:5px;padding-bottom:0px;" href="Login"><img src="Images/cart.jpg" class="img img-responsive" style="float:left;"/><span>Online<br>Order</span></a></li>
-                <li><a style="padding-top:5px;padding-bottom:0px;"><img src="Images/delivery.jpg" width="40" height="40" class="img img-responsive" style="float:left;"/><span>Delivery<br>9999-9999</span></a></li>
-                <!--<p style="font-size:medium;font-style:italic;"><a class="pull-right link-colour"><img src="Images/cart.jpg" class="img img-responsive" style="float:left;"/>Cart</a></p>-->
-            </ul>
-            <!--<div class="col-xs-6 col-sm-6 col-lg-6" align="right">
-                <p style="font-size:medium;font-style:italic;"><a class="pull-left link-colour"><img src="Images/delivery.jpg" class="img img-responsive" style="float:left;"/>Delivery</a></p>
-            </div>-->
-        </div>
-       </div>
-    </nav> 
+    <div ng-include="'Templates/AppHeader.html'"></div>
     <div class="view">
         <ng-view></ng-view>
     </div>
-    <div class="navbar-fixed-bottom navbar-nav" style="background:-webkit-linear-gradient(right,black,black);">
-        <div class="row">
-            <div class="col-xs-8 col-sm-8 col-lg-8">
-                <div class="col-xs-2 col-sm-2 col-lg-2">
-                    <img src="Images/unnamed.png" />
-                </div>
-                <div class="col-xs-10 col-sm-10 col-lg-10" style="padding:25px;">
-                 <p style="color:darkgrey">Order your favourite snacks online.We will ensure you get the same at your door step within 30 min.</p>
-                </div>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-lg-4">
-                <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
-                    <a  href="Mission.html">Mission</a><span style="color:darkgray">|</span>
-                    <a  href="Disclaimer.html">Disclaimer</a><span style="color:darkgray">|</span>
-                    <a  href="Contact.html">Contact</a>
-                </div> 
-                <div class="col-xs-12 col-sm-12 col-lg-12">
-                    <p style="text-align:center;color:darkgrey;">Visit Our weSite-<a class="link-colour" href="ApplicationHome.html">Snack Box</a></p>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-lg-12">
-                    <p style="text-align:center;color:darkgrey;">All Rights Reserved. Copyright &copy; Snackbox Limited</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div ng-include="'Templates/AppFooter.html'"></div>
 </body>
 </html>
