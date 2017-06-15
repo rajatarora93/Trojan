@@ -1,0 +1,41 @@
+﻿<nav ng-controller="appController" class="navbar navbar-inverse" style="background:-webkit-linear-gradient(right,black,black);">
+    <div class="container-fluid">
+        <div class="col-xs-1 col-sm-1 col-lg-1">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Index">Snackbox</a>
+            </div>
+        </div>
+        <div class="col-xs-5 col-sm-5 col-lg-5">
+            <ul class="nav navbar-nav">
+                <li><a href="Index">Home</a></li>
+                <li><a href="Courses">Courses</a></li>
+                <li><a href="Directives">Directives</a></li>
+                <li><a href="Books">Book Store</a></li>
+                <li><a href="Filters">Filters</a></li>
+            </ul>
+        </div>
+      
+        <div ng-show="username=='' || username==undefined"  class="col-xs-6 col-sm-6 col-lg-6">
+            <ul class="nav navbar-nav pull-right">
+                <li><a style="padding-top:5px;padding-bottom:0px;" href="Login"><img src="Images/cart.jpg" class="img img-responsive" style="float:left;" /><span>Online<br>Order</span></a></li>
+                <li><a style="padding-top:5px;padding-bottom:0px;"><img src="Images/delivery.jpg" width="40" height="40" class="img img-responsive" style="float:left;" /><span>Delivery<br>9999-9999</span></a></li>
+                <!--<p style="font-size:medium;font-style:italic;"><a class="pull-right link-colour"><img src="Images/cart.jpg" class="img img-responsive" style="float:left;"/>Cart</a></p>-->
+            </ul>
+            <!--<div class="col-xs-6 col-sm-6 col-lg-6" align="right">
+                <p style="font-size:medium;font-style:italic;"><a class="pull-left link-colour"><img src="Images/delivery.jpg" class="img img-responsive" style="float:left;"/>Delivery</a></p>
+            </div>-->
+        </div>
+        <div ng-show="username.length>0" class="col-xs-6 col-sm-6 col-lg-6">
+            <ul class="nav navbar-nav pull-right">
+                <li><a style="padding-top:5px;padding-bottom:0px;" href="FoodMenu" class="btn btn-primary">
+                    <span><i class="glyphicon glyphicon-cutlery"></i></span>
+                    <span class="navbar-text-display navbar-text-displaysize">Food Menu</span></a>
+                </li>
+                <li><button class="btn btn-primary" ng-click="logout()">
+                    <span ><i class="glyphicon glyphicon-log-out"></i></span>
+                    <span class="navbar-text-display navbar-text-displaysize">Logout</span></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
