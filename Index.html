@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
     <title></title>
@@ -21,9 +21,20 @@
             display:inline-block;
         }
         .has-error .radio-control{
-            border-color: #a94442;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            border:1px solid #a94442; 
+            border-radius:3px
+        }
+        .has-success .radio-control{
+            border:1px solid #3c763d; 
+            border-radius:3px
+        }
+       .has-error .input-group-addon.r {
+            border-color:white;
+            border-right:inherit;
+        }
+       .has-success .input-group-addon.r {
+            border-color:white;
+            border-right:inherit;
         }
     </style>
     <script src="Lib/jquery-3.2.0.js"></script>
