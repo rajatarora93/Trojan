@@ -2,46 +2,79 @@
 <html lang="en" ng-app="app">
 <head>
     <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--<link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon" />-->
     <link href="Styles/bootstrap.css" rel="stylesheet" />
     <link href="Styles/style.css" rel="stylesheet" />
     <link href="Styles/style1.css" rel="stylesheet" />
     <style>
-        .navbar-nav>li>a{
-            padding-bottom:0px;
+        .navbar-nav > li > a {
+            padding-bottom: 0px;
         }
-        .nav{
-            padding-bottom:0px;
+
+        .nav {
+            padding-bottom: 0px;
         }
-        .navbar-nav>li>a>span{
-            font-size:medium;
-            font-style:italic;
-            display:inline-block;
+
+        .navbar-nav > li > a > span {
+            font-size: medium;
+            font-style: italic;
+            display: inline-block;
         }
-        .has-error .radio-control{
-            border:1px solid #a94442; 
-            border-radius:3px
+        .navbar-nav> li >a.btn-primary{
+            font-size:90%;
+            padding-top:5px;
+            padding-bottom:4px;
         }
-        .has-success .radio-control{
-            border:1px solid #3c763d; 
-            border-radius:3px
+        .navbar-nav > li > a > span >i{
+            color:white; 
+            font-style:normal;
+            font-size:smaller;
         }
-       .has-error .input-group-addon.r {
-            border-color:white;
-            border-right:inherit;
+         .navbar-nav > li > a > span.navbar-text-display{
+             font-style:normal;
+             font-size:small;
+             color:white;
+         }
+        .navbar-nav> li >a:hover.btn-primary {
+          color: #fff;
+          background-color: #286090;
+          border-color: #204d74;
         }
-       .has-success .input-group-addon.r {
-            border-color:white;
-            border-right:inherit;
+        .nav> li >a.btn-primary{
+         margin:2px 2px;
+        }
+        .has-error .radio-control {
+            border: 1px solid #a94442;
+            border-radius: 3px;
+        }
+
+        .has-success .radio-control {
+            border: 1px solid #3c763d;
+            border-radius: 3px;
+        }
+
+        .has-error .input-group-addon.r {
+            border-color: white;
+            border-right: inherit;
+        }
+
+        .has-success .input-group-addon.r {
+            border-color: white;
+            border-right: inherit;
+        }
+        .navbar-text-display{
+            font-style:normal;
+            font-size:small;
+            color:white;
         }
     </style>
     <script src="Lib/jquery-3.2.0.js"></script>
     <script src="Lib/bootstrap.js"></script>
     <script src="Lib/angular.js"></script>
     <script src="Lib/angular-route.js"></script>
-    <script src="Lib/bootbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <script src="JS/directives.js"></script>
     <script src="JS/filters.js"></script>
     <script src="JS/app.js"></script>
