@@ -1,4 +1,4 @@
-﻿<nav ng-controller="appController" class="navbar navbar-inverse" style="background:-webkit-linear-gradient(right,black,black);">
+<nav ng-controller="appController" class="navbar navbar-inverse" style="background:-webkit-linear-gradient(right,black,black);">
     <div class="container-fluid">
         <div class="col-xs-1 col-sm-1 col-lg-1">
             <div class="navbar-header">
@@ -27,11 +27,11 @@
         </div>
         <div ng-show="username.length>0" class="col-xs-6 col-sm-6 col-lg-6">
             <ul class="nav navbar-nav pull-right">
-                <li><a style="padding-top:5px;padding-bottom:0px;" href="FoodMenu" class="btn btn-primary">
+                <li><a href="FoodMenu" class="btn btn-primary" style="margin-top:10px">
                     <span><i class="glyphicon glyphicon-cutlery"></i></span>
-                    <span class="navbar-text-display navbar-text-displaysize">Food Menu</span></a>
+                    <span class="navbar-text-display">Food Menu</span></a>
                 </li>
-                <li><button class="btn btn-primary" ng-click="logout()">
+                <li><button class="btn btn-primary" style="font-size:90%;margin-top:10px;" ng-click="logout()">
                     <span ><i class="glyphicon glyphicon-log-out"></i></span>
                     <span class="navbar-text-display navbar-text-displaysize">Logout</span></button>
                 </li>
