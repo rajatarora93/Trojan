@@ -44,6 +44,33 @@ directives.directive('highlight', function () {
     };
 });
 
+directives.directive('activeLink',['$location',function ($location) {
+    return{
+        restrict: "A",
+        scope:false,
+        link: function (scope, element) {
+            function setActive(){
+                var path=$location.path();
+                if(path)
+                {
+                    console.log(element);
+                    angular.forEach(element.find('li'), function (li) {
+                        var anchor = li.querySelector('a');
+                        if(anchor.href.match(path+'(?=\\?|$)')){
+                            $($(li).find('a')).addClass('active');
+                        }
+                        else{
+                            angular.element($(li).find('a')).removeClass('active');
+                        }
+                    });
+                }
+            }
+            setActive();
+            scope.$on('$locationChangeSuccess',setActive);
+        }
+    }
+}]);
+
 directives.directive('pwCheck', function () {
     return {
         require: 'ngModel',
