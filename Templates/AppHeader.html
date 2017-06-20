@@ -25,17 +25,33 @@
                 <p style="font-size:medium;font-style:italic;"><a class="pull-left link-colour"><img src="Images/delivery.jpg" class="img img-responsive" style="float:left;"/>Delivery</a></p>
             </div>-->
         </div>
-        <div ng-show="username.length>0" class="col-xs-6 col-sm-6 col-lg-6">
+        <div ng-show="username.length>0"  class="col-xs-6 col-sm-6 col-lg-6">
             <ul class="nav navbar-nav pull-right">
+                <li>
+                    <button class="btn btn-primary" style="font-size:90%;margin-top:10px;" ng-click="logout()">
+                        <span><i class="glyphicon glyphicon-log-out"></i></span>
+                        <span class="navbar-text-display navbar-text-displaysize">Logout</span>
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right" Active-Link>
                 <li><a href="FoodMenu" class="btn btn-primary" style="margin-top:10px">
                     <span><i class="glyphicon glyphicon-cutlery"></i></span>
                     <span class="navbar-text-display">Food Menu</span></a>
                 </li>
-                <li><button class="btn btn-primary" style="font-size:90%;margin-top:10px;" ng-click="logout()">
-                    <span ><i class="glyphicon glyphicon-log-out"></i></span>
-                    <span class="navbar-text-display navbar-text-displaysize">Logout</span></button>
+                <li>
+                    <a href="ViewOrders" class="btn btn-primary" style="margin-top:10px">
+                        <span><i class="glyphicon glyphicon-th-list"></i></span>
+                        <span class="navbar-text-display">My Orders</span>
+                    </a>
                 </li>
-            </ul>
+                <li>
+                    <a href="Checkout" class="btn btn-primary" style="margin-top:10px">
+                        <span><i class="glyphicon glyphicon-shopping-cart"></i></span>
+                        <span class="navbar-text-display">Food Cart<span class="badge">{{count}}</span></span>
+                    </a>
+                </li>
+                </ul>
         </div>
     </div>
 </nav>
