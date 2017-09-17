@@ -9,6 +9,14 @@
     <link href="Styles/style.css" rel="stylesheet" />
     <link href="Styles/style1.css" rel="stylesheet" />
     <style>
+        /*.figure {
+            height: 40%;
+            width:70%;
+        }*/
+        .figure-caption{
+           text-align:center;
+       
+        }
         .navbar-nav > li > a {
             padding-bottom: 0px;
         }
@@ -22,39 +30,47 @@
             font-style: italic;
             display: inline-block;
         }
-        .navbar-nav> li >a.btn-primary{
-            font-size:90%;
-            padding-top:5px;
-            padding-bottom:4px;
+
+        .navbar-nav > li > a.btn-primary {
+            font-size: 90%;
+            padding-top: 5px;
+            padding-bottom: 4px;
         }
-        .navbar-nav > li > a > span >i{
-            color:white; 
-            font-style:normal;
-            font-size:smaller;
+
+        .navbar-nav > li > a > span > i {
+            color: white;
+            font-style: normal;
+            font-size: smaller;
         }
-         .navbar-nav > li > a > span.navbar-text-display{
-             font-style:normal;
-             font-size:small;
-             color:white;
-         }
-        .navbar-nav> li >a.btn-primary:hover{
-          color: #fff;
-          background-color: #286090;
-          border-color: #204d74;
+
+        .navbar-nav > li > a > span.navbar-text-display {
+            font-style: normal;
+            font-size: small;
+            color: white;
         }
-        .navbar-nav> li >a.btn-primary:focus{
-          color: #fff;
-          background-color: #286090;
-          border-color: #204d74;
+
+        .navbar-nav > li > a.btn-primary:hover {
+            color: #fff;
+            background-color: #286090;
+            border-color: #204d74;
         }
-        .active{
-          color: #fff;
-          background-color: #286090;
-          border-color: #204d74;
+
+        .navbar-nav > li > a.btn-primary:focus {
+            color: #fff;
+            background-color: #286090;
+            border-color: #204d74;
         }
-        .nav> li >a.btn-primary{
-         margin:2px 2px;
+
+        .active {
+            color: #fff;
+            background-color: #286090;
+            border-color: #204d74;
         }
+
+        .nav > li > a.btn-primary {
+            margin: 2px 2px;
+        }
+
         .has-error .radio-control {
             border: 1px solid #a94442;
             border-radius: 3px;
@@ -74,23 +90,44 @@
             border-color: white;
             border-right: inherit;
         }
-        .navbar-text-display{
-            font-style:normal;
-            font-size:small;
-            color:white;
+
+        .navbar-text-display {
+            font-style: normal;
+            font-size: small;
+            color: white;
         }
+        @media(max-width:768px) {
+            .navbar-fixed-bottom .col-sm-4 > img{
+                display: none;
+            }
+            .navbar-fixed-bottom .col-sm-8 {
+                display: none;
+            }
+            .navbar-nav img {
+                display: none;
+            }
+        }
+       
+       @media(min-width:768px){
+           .navbar-nav span.glyphicon{
+               display:none;
+           }
+       }
     </style>
     <script src="Lib/jquery-3.2.0.js"></script>
     <script src="Lib/bootstrap.js"></script>
     <script src="Lib/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.4/angular-resource.js"></script>
     <script src="Lib/angular-route.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>-->
+    <script src="Lib/bootbox.min.js"></script>
+    <script src="JS/shoppingCart.js"></script>
+    <script src="JS/customerOrders.js"></script>
     <script src="JS/services.js"></script>
     <script src="JS/directives.js"></script>
     <script src="JS/filters.js"></script>
     <script src="JS/app.js"></script>
-    <script src="Controllers/registerController.js"></script>
+    <script src="Controllers/registerController.js"></script>  
     <script src="Controllers/listBookController.js"></script>
     <script src="Controllers/filterController.js"></script>
     <script src="Controllers/directiveController.js"></script>
