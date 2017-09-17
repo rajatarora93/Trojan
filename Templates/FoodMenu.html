@@ -1,42 +1,43 @@
-<div>
+﻿<div >
+    <div>
     <center><h3><i>Dear<b>&nbsp;{{username|userTruncate|MyFirstLetter:1}}</b>, Please select your cuisine... </i></h3></center>
 </div>
-<div class="container" style="padding-top:10px;padding-left:105px">
+<div ng-controller="foodCtrl" class="container" style="padding-top:10px;padding-left:105px" ng-init="getFood()" >
     <div class="row">
-        <div class="col-lg-3 col-lg-offset-2">
-            <a href="FoodDetail.html">
+        <div class="col-lg-3 col-lg-offset-2 col-md-3 col-md-offset-2  col-sm-3 col-sm-offset-2 " >
+            <a href="FoodDetail" ng-click="selectedItem(items[0].code)">
                 <figure class="figure">
-                    <img src="" class="figure-img img-fluid img-thumbnail zoom " alt="China" width="200" height="200" />
-                    <i><figcaption class="figure-caption"><span style="color:maroon">Burgers</span></figcaption></i>
+                    <img src={{items[0].imageUrl}} class="figure-img img-fluid img-thumbnail zoom " alt="Mexican" width="170" height="170" />
+                    <i><figcaption class="figure-caption"><span style="color:maroon">{{items[0].name}}</span></figcaption></i>
                 </figure>
             </a>
         </div>
-        <div class="col-lg-3">
-            <a href="FoodDetail.html">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <a href="FoodDetail" ng-click="selectedItem(items[1].code)">
                 <figure class="figure">
-                    <img src="" class="figure-img img-fluid img-thumbnail zoom " alt="China" width="200" height="200" />
-                    <i><figcaption class="figure-caption"><span style="color:maroon">Pizzas</span></figcaption></i>
+                    <img src={{items[1].imageUrl}}   class="figure-img img-fluid img-thumbnail zoom " alt="Italian"  width="170" height="170"/>
+                    <i><figcaption class="figure-caption"><span style="color:maroon">{{items[1].name}}</span></figcaption></i>
                 </figure>
             </a>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3 col-lg-offset-2">
-            <a href="FoodDetail.html">
+        <div class="col-lg-3 col-lg-offset-2 col-md-3 col-md-offset-2  col-sm-3 col-sm-offset-2">
+            <a href="FoodDetail" ng-click="selectedItem(items[2].code)">
                 <figure class="figure">
-                    <img src="" class="figure-img img-fluid img-thumbnail zoom " alt="China" width="200" height="200" />
-                    <i><figcaption class="figure-caption"><span style="color:maroon">Chaats</span></figcaption></i>
+                    <img src={{items[2].imageUrl}} class="figure-img img-fluid img-thumbnail zoom " alt="Indian"  width="170" height="170"/>
+                    <i><figcaption class="figure-caption"><span style="color:maroon">{{items[2].name}}</span></figcaption></i>
                 </figure>
             </a>
         </div>
-        <div class="col-lg-3">
-            <a href="FoodDetail.html">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <a href="FoodDetail" ng-click="selectedItem(items[3].code)">
                 <figure class="figure">
-                    <img src="" class="figure-img img-fluid img-thumbnail zoom " alt="China" width="200" height="200" />
-                    <i><figcaption class="figure-caption"><span style="color:maroon">Chinese food</span></figcaption></i>
+                    <img src={{items[3].imageUrl}}  class="figure-img img-fluid img-thumbnail zoom " alt="China" width="170" height="170"/>
+                    <i><figcaption class="figure-caption"><span style="color:maroon">{{items[3].name}}</span></figcaption></i>
                 </figure>
             </a>
         </div>
     </div>
 </div>
-
+</div>

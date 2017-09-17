@@ -1,0 +1,35 @@
+﻿<div class="view" ng-controller="cartCtrl">
+    <table class="table" style="width:70%;margin:0 auto;margin-top:40px;">
+        <thead>
+            <tr>
+                <th style="text-align:left;">
+                    <div> Food Item</div>
+                </th>
+                <th>Size</th>
+                <th>Quantity*Cost</th>
+                <th></th>
+            </tr>
+        </thead>
+            <tr ng-hide="cart.items.length>0">
+                <td class="tdCenter" colspan="3">
+                    Your Cart is Empty!
+                </td>
+            </tr>
+            <tr ng-repeat="item in cart.items">
+                <td>{{item.name}}</td>
+                <td class="tdCenter">{{item.size}}</td>
+                <td class="tdCenter">{{item.quantity}}&nbsp;*&nbsp;{{item.price}}</td>
+                <td class="tdCenter">
+                    <button type="button" class="btn btn-link" ng-click="addItem(item.sku,item.name,item.price,-1,item.size)">
+                        <span class="glyphicon glyphicon-remove"></span> 
+                    </button>
+                </td>
+            </tr>
+            <tr ng-controller="orderCtrl">
+                <td><b>Total</b></td>
+               <td class="tdCenter"><b>{{cart.getTotalCount()}}items,&nbsp;{{cart.getTotalPrice()|MyCurrency:" Rs.":true}}</b></td>
+                <td class="tdCenter"><button class="btn btn-success roundcorners" ng-click="submit(cart.items,cart.getTotalPrice())" ng-show="cart.items.length>0">Place Order</button></td>
+                <td class="tdCenter"><button class="btn btn-danger roundcorners" ng-click="" ng-show="cart.items.length>0">Cancel Order</button></td>
+            </tr>
+        </table>
+    </div>

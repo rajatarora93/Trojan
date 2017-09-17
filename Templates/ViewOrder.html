@@ -1,0 +1,64 @@
+﻿<div class="view" ng-controller="orderCtrl">
+    <div>
+        <center><h3><i>Dear<b>&nbsp;{{username|userTruncate|MyFirstLetter:1}}</b>, Your details till date... </i></h3></center>
+    </div>
+    <table class="table-bordered" style="width:90%;font-size:90%;" align="center">
+        <thead>
+            <tr>
+                <th style="width:5%">#</th>
+                <th style="width:5%">OrderId</th>
+                <th width:45%">
+                    <div class="row" style="vertical-align:middle;padding-top:20px;"><center>Details<hr style="width:95%" /></center></div>
+                    <div class="row">
+                        <div class="col-xs-3 border-right alignment-adjust">Item Name</div>
+                        <div class="col-xs-3 border-right alignment-adjust">Item Size</div>
+                        <div class="col-xs-3 border-right alignment-adjust">Item Quantity</div>
+                        <div class="col-xs-3 alignment-adjust">Price Per Item</div>
+                    </div>
+                </th>
+                <th style="width:10%">Total Cost</th>
+                <th style="width:10%">Order Date</th>
+                <th style="width:10%">Order Status</th>
+                <th style="width:10%">Modify Order</th>
+            </tr>
+        </thead>
+            <tr ng-repeat="item in bag.orders">
+                <td style="width:5%">{{($index+1)|MyNumber}}</td>
+                <td style="width:5%">{{item.orderId}}</td>
+                <td width="45%">
+                    <div class="container" style="width:100%">
+                        <div class="row" ng-if="item.status=='Not completed'" ng-repeat="i in item">
+                            <div class="col-xs-3 alignment-adjust">{{i.name}}</div>
+                            <div class="col-xs-3 alignment-adjust">
+                                <select style="width:100%" ng-model="i.size">
+                                    <option value="small">small</option>
+                                    <option value="medium">medium</option>
+                                    <option value="large">large</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-3 alignment-adjust">
+                                <input type="number" style="width:100%" ng-model="i.quantity" min="1" max="10" />
+                            </div>
+                            <div class="col-xs-3 alignment-adjust">{{i.price|MyCurrency:"Rs.":true}}</div>
+                        </div>
+                    </div>
+                </td>
+                <td style="width:10%">{{item.totalCost|MyCurrency:"RS.":true}}</td>
+                <td style="width:10%">{{item.orderDate|date}}</td>
+                <td style="width:10%">{{item.orderStatus}}</td>
+                <td style="width:15%">
+                    <span ng-switch="item.orderStatus">
+                        <span ng-switch-when="Completed">Delivered & Closed</span>
+                        <span ng-switch-when="Not completed">
+                            <span>
+                                <span classs="btn-group">
+                                    <button type="button" class="btn btn-primary" style="font-size:90%" ng-click="">Update</button>
+                                    <button type="button" class="btn btn-primary" style="font-size:90%" ng-click="">Delete</button>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+    </table>
+</div>
