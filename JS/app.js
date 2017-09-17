@@ -1,47 +1,57 @@
-var app = angular.module("app", ["ngRoute", 'directives', 'filters', 'services', 'ngResource'])
-                 .config(function ($routeProvider, $locationProvider,$httpProvider) {
+var app = angular.module("app", ["ngRoute",'directives','filters','services','ngResource'])
+                 .config(function ($routeProvider, $locationProvider) {
                      $routeProvider
                      .when("/Books", {
-                         templateUrl: 'Templates/ViewBooks.html',
-                         controller: 'bookListCtrl'
+                     templateUrl:'Templates/ViewBooks.html',
+                     controller:'bookListCtrl'
                      }).
                      when("/Filters", {
-                         templateUrl: 'Templates/AngularFilterDemo.html',
-                         controller: 'filterController'
+                     templateUrl:'Templates/AngularFilterDemo.html',
+                     controller:'filterController'
                      }).
                      when("/Courses", {
-                         templateUrl: 'Templates/CourseRegistration.html',
-                         controller: 'registerController'
+                     templateUrl: 'Templates/CourseRegistration.html',
+                     controller: 'registerController'
                      }).
                      when("/Directives", {
-                         templateUrl: 'Templates/AngularDirectiveDemo.html',
-                         controller: 'directiveController'
+                     templateUrl: 'Templates/AngularDirectiveDemo.html',
+                     controller: 'directiveController'
                      }).
                      when("/Login", {
-                         templateUrl: 'Templates/Login.html',
-                         controller: 'loginController'
+                     templateUrl: 'Templates/Login.html',
+                     controller: 'loginController'
                      }).
                      when("/ApplicationHome", {
-                         templateUrl: 'Templates/ApplicationHome.html',
-                         controller: 'appHomeController'
+                     templateUrl: 'Templates/ApplicationHome.html',
+                     controller: 'appHomeController'
                      }).
                      when("/SignUp", {
-                         templateUrl: 'Templates/SignUp.html',
-                         controller: 'signupController'
+                     templateUrl: 'Templates/SignUp.html',
+                     controller: 'signupController'
                      }).
                      when("/FoodMenu", {
-                         templateUrl: 'Templates/FoodMenu.html'
-                     }).
+                     templateUrl: 'Templates/FoodMenu.html',
+                     controller: 'foodCtrl'
+                         }).
+                     when("/FoodDetail", {
+                     templateUrl: 'Templates/FoodDetail.html',
+                     controller: 'fooddetail'
+                         }).
+                     when("/FoodCart", {
+                     templateUrl: 'Templates/FoodCart.html',
+                     controller: 'cartCtrl'
+                         }).
+                     when("/Order", {
+                     templateUrl: 'Templates/ViewOrder.html',
+                     controller: 'orderCtrl'
+                         }).
                      otherwise({
-                         redirectTo: '/'
+                         redirectTo:''
                      });
                      $locationProvider.html5Mode(true);//code embedded to remove # from href link and url.
-                     $httpProvider.defaults.useXDomain = true;
-                     delete $httpProvider.defaults.headers.common['X-Requested-With'];
                  });
-
 app.run(function ($rootScope, $route, $location) {
-    $rootScope.$on('$locationChangeSuccess', function () {
+    $rootScope.$on('$locationChangeSuccess', function  () {
         $rootScope.actualLocation = $location.path();
         console.log($location.path());
         console.log("rootscope" + $rootScope.username);
