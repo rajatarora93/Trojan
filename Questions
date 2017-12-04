@@ -1,0 +1,3 @@
+Interview Questions
+This keyword in javascript:
+"this" is not assigned a value until an object invokes the function where this is defined. 
