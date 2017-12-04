@@ -1,10 +1,23 @@
 Interview Questions
-This keyword in javascript:
+--------------------
+->This keyword in javascript:
 "this" is not assigned a value until an object invokes the function where this is defined or used. this has the value of the invoking
 object in most circumstances.
 eg.
  $ ("button").click (function (event) {
     // $(this) will have the value of the button ($("button")) object​
-​// because the button object invokes the click () method​
+// because the button object invokes the click () method​
     console.log ($ (this).prop ("name"));
     });
+
+->The use of this in the global scope
+In the global scope, when the code is executing in the browser, all global variables and functions are defined on the window object. 
+Therefore, when we use this in a global function, it refers to (and has the value of) the global window object 
+(not in strict mode though, as noted earlier) that is the main container of the entire JavaScript application or web page.
+var firstName = "Peter",
+    lastName = "Ally";
+    function showFullName () {
+    // "this" inside this function will have the value of the window object​
+    // because the showFullName () function is defined in the global scope, just like the firstName and lastName​
+    console.log (this.firstName + " " + this.lastName);
+    }
