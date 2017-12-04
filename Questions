@@ -1,5 +1,26 @@
 Interview Questions
 --------------------
+->.What are the differences between null and undefined?
+undefined is a type itself (undefined) while null is an object.
+In JavaScript null is "nothing". It is supposed to be something that doesn't exist whereas a variable without a value, 
+has the value undefined. The typeof is also undefined.Unassigned variables are initialized by JavaScript with a default value of
+undefined. JavaScript never sets a value to null. That must be done programmatically
+You can empty an object by setting it to null:
+You can empty a variable by setting it to undefined.
+
+
+->.What are the differences between == and ===?
+First will compare the value and the second will compare the type as well.
+
+->.How would you compare two objects in JavaScript?
+The default equality operator in JavaScript for Objects yields true when they refer to the same location in memory.
+var x = {};
+var y = {};
+var z = x;
+x === y; // => false
+x === z; // => true
+If you are working in AngularJS, the angular.equals function will determine if two objects are equal.It does a deep compare on arrays too.
+
 ->This keyword in javascript:
 "this" is not assigned a value until an object invokes the function where this is defined or used. this has the value of the invoking
 object in most circumstances.
@@ -21,3 +42,15 @@ var firstName = "Peter",
     // because the showFullName () function is defined in the global scope, just like the firstName and lastName​
     console.log (this.firstName + " " + this.lastName);
     }
+    
+->JavaScript evaluates expressions from left to right.
+->You can use the JavaScript typeof operator to find the type of a JavaScript variable.
+->Javascript hoisting
+  what it does is it moves all the declarations of the variables inside a scope to the top before it start executing.
+     function localscope()     ------>after Hoisting 
+     {                                         {   var a;
+     console.log(a);                               console.log(a);    ---> This will give undefined but doesn't throw an error;
+     var a="Hello";                                 a="Hello";
+     }                                          }
+     // uncaught refernce error a when hoisting would not have been there
+
