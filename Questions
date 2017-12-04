@@ -2,3 +2,9 @@ Interview Questions
 This keyword in javascript:
 "this" is not assigned a value until an object invokes the function where this is defined or used. this has the value of the invoking
 object in most circumstances.
+eg.
+ $ ("button").click (function (event) {
+    // $(this) will have the value of the button ($("button")) object​
+​// because the button object invokes the click () method​
+    console.log ($ (this).prop ("name"));
+    });
