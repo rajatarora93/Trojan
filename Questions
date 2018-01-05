@@ -3,7 +3,7 @@ Interview Questions
 ->.What are the differences between null and undefined?
 undefined is a type itself (undefined) while null is an object.
 In JavaScript null is "nothing". It is supposed to be something that doesn't exist whereas a variable without a value, 
-has the value undefined. The typeof is also undefined.Unassigned variables are initialized by JavaScript with a default value of
+has the value undefined.Unassigned variables are initialized by JavaScript with a default value of
 undefined. JavaScript never sets a value to null. That must be done programmatically
 You can empty an object by setting it to null:
 You can empty a variable by setting it to undefined.
