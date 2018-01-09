@@ -1,0 +1,12 @@
+->Drawbacks of waterfall model:
+1.End product is visible only late in the SDLC cycle.
+2.Cost of re-work/changes in the SDLC cycle is very high.
+3.Requirements need to be fixed in the beginning of the project.
+
+->In waterfall each phase of the SDLC has a specific deadline and deliverables that flows into the next phase.Hence all requirements are
+collected,then designed,code written,tested,integrated and deployed at the end.
+
+->1.In agile,requirments are broken down into smaller modules and all the phases of SDLC are completed for it.Hence small pieces of working 
+software get released frequently.
+2.Agile is time boxed,iterative approch to deliver software that builds software incrementally from the start of the project,instead of 
+trying to deliver it all at once at the end.
